@@ -213,22 +213,42 @@ dt_please_log_in();
                 <div class="bordered-box">
                     <div class="section-header">
                         <?php echo esc_html( sprintf( _x( '%s Filters', 'Contacts Filters', 'disciple_tools' ), DT_Posts::get_post_settings( $post_type )['label_plural'] ) ) ?>
+                        <!-- down arrow -->
                         <button class="section-chevron chevron_down">
                             <img src="<?php echo esc_html( get_template_directory_uri() . '/dt-assets/images/chevron_down.svg' ) ?>"/>
                         </button>
+                        <!-- up arrow -->
                         <button class="section-chevron chevron_up">
                             <img src="<?php echo esc_html( get_template_directory_uri() . '/dt-assets/images/chevron_up.svg' ) ?>"/>
                         </button>
                     </div>
                     <div class="section-body">
-                        <ul class="accordion" id="list-filter-tabs" data-responsive-accordion-tabs="accordion medium-tabs large-accordion"></ul>
+                        <!-- ul to add different filters -->
+                        <ul class="accordion" id="list-filter-tabs"
+                            data-responsive-accordion-tabs="accordion medium-tabs large-accordion"></ul>
+                            
+                            <!-- to add custom filterssss -->
                         <div style="margin-bottom: 5px">
                             <a data-open="filter-modal"><img class="dt-blue-icon dt-icon" style="display: inline-block; margin-right:12px" src="<?php echo esc_html( get_template_directory_uri() . '/dt-assets/images/circle-add.svg' ) ?>"/><?php esc_html_e( 'Create custom filter', 'disciple_tools' ) ?></a>
                         </div>
                         <div class="custom-filters"></div>
                     </div>
+
                 </div>
                 <br>
+                <dt-list-help-box
+                    listFiltersTab
+                    postType="contacts"
+                    postTypeLabel="Contacts Filters"
+                ></dt-list-help-box>
+
+<!-- Other way of handeling modal by handleing template in dt-theme only -->
+            <!--<dt-modal id="create-custom-filter" hidebutton>
+                    <span slot="content">
+                    Test
+                </span>
+                </dt-modal> -->
+<br>
                 <div class="bordered-box">
                     <div class="section-header">
                         <?php echo esc_html( _x( 'Split By', 'Split By', 'disciple_tools' ) ) ?>
@@ -896,6 +916,8 @@ Thanks!';
                     <div id="selected-filters"></div>
                 </div>
             </div>
+
+          
 
             <div class="grid-x">
                 <div class="cell small-4 filter-modal-left">
