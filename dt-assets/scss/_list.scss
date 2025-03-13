@@ -153,16 +153,20 @@ table.js-list{
 }
 
 .table-container {
+    overflow-x: scroll;
+    overflow-y: auto;
+    transform: rotateX(180deg);
+}
+
+.table-container.table-container-table {
+    transform: rotateX(180deg);
+}
+
+.table-container.table-container-table-responsive {
+    width: 100%;
     display: block;
-    overflow-x: auto;
+    overflow-x: scroll;
 }
-
-.table-container, .table-container #records-table {
-    transform:rotateX(180deg);
-    -ms-transform:rotateX(180deg); /* IE 9 */
-    -webkit-transform:rotateX(180deg); /* Safari and Chrome */
-}
-
 
 table.js-list th[data-id="name"] {
     position: sticky;
@@ -181,6 +185,7 @@ table.js-list th[data-id="index"] {
     position: sticky;
     left: -1px;
     background-color: #ffffff;
+    border-left: 1px solid rgb(232,232,232);
 }
 
 table.js-list td[data-id="index"] {
